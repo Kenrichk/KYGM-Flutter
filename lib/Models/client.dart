@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 
 class Client {
   final String firstName;
-  final String midName;
+  final String middleName;
   final String lastName;
   final int age;
   final DateTime dob;
@@ -12,12 +12,12 @@ class Client {
   final String state;
   final int zip;
   final int ssid;
-  final int phoneNum;
-  final Image idPic;
+  final int phoneNumber;
+  final Image idPhoto;
 
   Client({
     @required this.firstName,
-    @required this.midName,
+    @required this.middleName,
     @required this.lastName,
     @required this.age,
     @required this.dob,
@@ -26,7 +26,7 @@ class Client {
     @required this.state,
     @required this.zip,
     @required this.ssid,
-    @required this.phoneNum,
-    @required this.idPic,
+    @required this.phoneNumber,
+    @required this.idPhoto,
   });
 }
