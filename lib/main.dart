@@ -112,3 +112,8 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+*/make method so when adding transaction, searches for 
+Client based on first last name using spandex as splitter
+Adds transaction to client transaction list
+When client clicked, displays client info+ transactions with client,
+Click on transaction to see all details. Editable?
