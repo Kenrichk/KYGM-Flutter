@@ -97,8 +97,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Chart(_recentTransactions),
-            TransactionList(_userTransactions),
+            //move chart to different page?
+            //make cart do week,month,year/s?
+            //Chart(_recentTransactions),
+            //TransactionList(_userTransactions),
           ],
         ),
       ),
