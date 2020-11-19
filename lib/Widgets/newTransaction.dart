@@ -54,7 +54,7 @@ class _NewTransactionState extends State<NewTransaction> {
         );
       }).toList(),
     );
-    return Card(
+    Card(
       elevation: 5,
       child: Container(
         padding: EdgeInsets.all(15),

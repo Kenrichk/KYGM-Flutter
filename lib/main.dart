@@ -1,8 +1,8 @@
 import './Widgets/newTransaction.dart';
-import './Widgets/transactionList.dart';
+//import './Widgets/transactionList.dart';
 import 'package:flutter/material.dart';
 import './Models/transaction.dart';
-import './Widgets/chart.dart';
+//import './Widgets/chart.dart';
 
 void main() => runApp(MyApp());
 
@@ -54,9 +54,16 @@ class _MyHomePageState extends State<MyHomePage> {
   void _addNewTransaction(String txTitle, double txAmount) {
     final newTx = Transaction(
       title: txTitle,
-      amount: txAmount,
+      cost: txAmount,
       date: DateTime.now(),
-      id: DateTime.now().toString(),
+      serviceId: DateTime.now().toString(),
+      clientId: txTitle,
+      revenue: txAmount,
+      price: txAmount,
+      risk: txTitle,
+      duration: txAmount,
+      description: txTitle,
+      type: txTitle,
     );
     setState(() {
       _userTransactions.add(newTx);
@@ -83,13 +90,13 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Text('Drawer Header'),
+              child: Text('Menu'),
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
             ),
             ListTile(
-              title: Text('Item 1'),
+              title: Text('Clients'),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -98,7 +105,25 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              title: Text('Item 2'),
+              title: Text('Services'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Purchases'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Sales'),
               onTap: () {
                 // Update the state of the app
                 // ...
