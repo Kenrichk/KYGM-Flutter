@@ -53,7 +53,7 @@ class _NewTransactionState extends State<NewTransaction> {
           child: Text(value),
         );
       }).toList(),
-    ),
+    );
     return Card(
       elevation: 5,
       child: Container(

@@ -5,7 +5,6 @@ import './Widgets/transactionList.dart';
 import 'package:flutter/material.dart';
 import './Models/transaction.dart';
 import './Widgets/chart.dart';
-//test
 
 void main() => runApp(MyApp());
 
