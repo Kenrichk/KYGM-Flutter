@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import './Widgets/newTransaction.dart';
 import './Widgets/transactionList.dart';
 import 'package:flutter/material.dart';
@@ -112,14 +110,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       appBar: AppBar(
-        title: Text(
-          'Expense App',
-          style: TextStyle(
-            fontFamily: 'OpenSans',
-            fontWeight: FontWeight.bold,
-            fontSize: 22,
-          ),
-        ),
         actions: [
           IconButton(
             icon: Icon(Icons.add),
