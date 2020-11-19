@@ -57,6 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
       amount: txAmount,
       date: DateTime.now(),
       id: DateTime.now().toString(),
+      type: "customer",
     );
     setState(() {
       _userTransactions.add(newTx);
