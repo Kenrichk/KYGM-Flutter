@@ -97,8 +97,9 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            //use select buttons to switch between time lengths
             //move chart to different page?
-            //make cart do week,month,year/s?
+            //make chart do week,30 day,365,all time?
             //Chart(_recentTransactions),
             //TransactionList(_userTransactions),
           ],
@@ -112,8 +113,30 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-*/make method so when adding transaction, searches for 
+/* make method so when adding transaction, searches for 
 Client based on first last name using spandex as splitter
 Adds transaction to client transaction list
+search first, if found then add otherewise dont
+catch exception if err. client not found, display create new client?
+
 When client clicked, displays client info+ transactions with client,
-Click on transaction to see all details. Editable?
+Click on transaction to see all details. Editable transactions?
+
+*/
+/*
+CREATE PROCEDURE ClientCheck
+AS STRING CliFname, STRING CliLname
+(
+  BEGIN
+  SELECT * FROM CLIENTS WHERE ClientFname=CliFname AND 
+  ClientLname=CliLname;
+  IF(NumebrOfResults==1){
+    RUN PROCEDURE AddTransaction;
+  }ELSE IF(numebrOfResults>1){
+    send all results back to app to let user select which one to apply the transaction to
+  }ELSE IF(numberOfResults<1){
+    send a trigger back to app to trigger a method telling user 'none found, create new?' 
+    with a create button.
+  }
+)
+*/

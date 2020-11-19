@@ -14,7 +14,9 @@ class Client {
   final int ssid;
   final int phoneNumber;
   final Image idPhoto;
-
+  final Image passportPhoto;
+  final Image birthCertPhoto;
+//multiple pictures
   Client({
     @required this.firstName,
     @required this.middleName,
@@ -27,6 +29,8 @@ class Client {
     @required this.zip,
     @required this.ssid,
     @required this.phoneNumber,
-    @required this.idPhoto,
+    this.idPhoto,
+    this.passportPhoto,
+    this.birthCertPhoto,
   });
 }
