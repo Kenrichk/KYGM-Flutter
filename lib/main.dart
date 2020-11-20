@@ -2,7 +2,6 @@ import './Widgets/newTransaction.dart';
 //import './Widgets/transactionList.dart';
 import 'package:flutter/material.dart';
 import './Models/transaction.dart';
-//import './Widgets/chart.dart';
 
 void main() => runApp(MyApp());
 
@@ -41,22 +40,21 @@ class _MyHomePageState extends State<MyHomePage> {
     //   date: DateTime.now(),
     // ),
   ];
-  List<Transaction> get _recentTransactions {
-    return _userTransactions.where((thisTrans) {
-      return thisTrans.date.isAfter(
-        DateTime.now().subtract(
-          Duration(days: 7),
-        ),
-      );
-    }).toList();
-  }
+  // List<Transaction> get _recentTransactions {
+  //   return _userTransactions.where((thisTrans) {
+  //     return thisTrans.date.isAfter(
+  //       DateTime.now().subtract(
+  //         Duration(days: 7),
+  //       ),
+  //     );
+  //   }).toList();
+  // }
 
   void _addNewTransaction(String txTitle, double txAmount) {
     final newTx = Transaction(
       title: txTitle,
       cost: txAmount,
       date: DateTime.now(),
-<<<<<<< HEAD
       serviceId: DateTime.now().toString(),
       clientId: txTitle,
       revenue: txAmount,
@@ -65,10 +63,6 @@ class _MyHomePageState extends State<MyHomePage> {
       duration: txAmount,
       description: txTitle,
       type: txTitle,
-=======
-      id: DateTime.now().toString(),
-      type: "customer",
->>>>>>> 5ccccf629f1b5d871573f621b754f6e60a004655
     );
     setState(() {
       _userTransactions.add(newTx);
@@ -82,6 +76,8 @@ class _MyHomePageState extends State<MyHomePage> {
           return NewTransaction(_addNewTransaction);
         });
   }
+
+  Stopwatch time = new Stopwatch();
 
   @override
   Widget build(BuildContext context) {
@@ -139,7 +135,16 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+      //timer and logo on front page
       appBar: AppBar(
+        title: Text(
+          'KYGM Services',
+          style: TextStyle(
+            fontFamily: 'OpenSans',
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+          ),
+        ),
         actions: [
           IconButton(
             icon: Icon(Icons.add),
@@ -149,9 +154,20 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            Text(time.frequency.toString()),
+            FlatButton(
+              child: Text("Start"),
+              onPressed: () => time.start(),
+              color: Colors.green,
+            ),
+            FlatButton(
+              child: Text("Stop"),
+              onPressed: () => time.stop(),
+              color: Colors.red,
+            ),
             //use select buttons to switch between time lengths
             //move chart to different page?
             //make chart do week,30 day,365,all time?
@@ -159,11 +175,6 @@ class _MyHomePageState extends State<MyHomePage> {
             //TransactionList(_userTransactions),
           ],
         ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () => startAddNewTransaction(context),
       ),
     );
   }
